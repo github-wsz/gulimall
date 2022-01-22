@@ -1,0 +1,23 @@
+#这里注意，端口数字太大可能会报错
+server:
+  port: 4111
+spring:
+  application:
+    name: gulimall-ware
+  datasource:
+    username: root
+    password: 1
+    url: jdbc:mysql://localhost:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: org.mariadb.jdbc.Driver
+  #    服务注册发现中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+springdoc:
+  packages-to-scan: org.wsz.gulimall.ware.controller

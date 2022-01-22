@@ -1,0 +1,27 @@
+#这里注意，端口数字太大可能会报错
+server:
+  port: 8111
+spring:
+  application:
+    name: gulimall-product
+  datasource:
+    username: root
+    password: 1
+    url: jdbc:mysql://localhost:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: org.mariadb.jdbc.Driver
+  #    服务注册发现中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+springdoc:
+  packages-to-scan: org.wsz.gulimall.product.controller
